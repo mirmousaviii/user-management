@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 export default function UserList() {
     return (
         <div>
             User List:
-            <a href="/users/1">User A</a> |
-            <a href="/users/2">User B</a>
+            <Link href="/users/1">User A</Link> |
+            <Link href="/users/2">User B</Link>
         </div>
     )
 }

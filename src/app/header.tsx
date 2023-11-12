@@ -1,6 +1,7 @@
 "use client"
 
 import {useState} from "react";
+import Link from 'next/link'
 
 import {
     useMediaQuery,
@@ -65,7 +66,7 @@ export default function Header() {
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
+                        component={Link}
                         href="/"
                         sx={{
                             flexGrow: 1,
@@ -79,7 +80,7 @@ export default function Header() {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {pages.map((page) => (
-                            <Button key={page.link} color="inherit" component="a" href={page.link}>
+                            <Button key={page.link} color="inherit" component={Link} href={page.link}>
                                 {page.title}
                             </Button>
                         ))}
@@ -111,7 +112,7 @@ export default function Header() {
                         <List>
                             {pages.map((page) => (
                                 <ListItem key={page.link} disablePadding>
-                                    <ListItemButton component="a" href={page.link}>
+                                    <ListItemButton component={Link} href={page.link}>
                                         <ListItemIcon>
                                             {page.icon}
                                         </ListItemIcon>

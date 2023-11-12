@@ -1,4 +1,4 @@
-import {Box, Link} from "@mui/material";
+import {Box, Link, Typography} from "@mui/material";
 
 export default function Footer() {
   return (
@@ -10,8 +10,10 @@ export default function Footer() {
               p: 3,
           }}
       >
-          Copyright &copy; {new Date().getFullYear()} by <Link href="https://mirmousavi.com/" target="_blank">Mostafa
-          Mirmousavi</Link>
+          <Typography>
+              Copyright &copy; {new Date().getFullYear()} by <Link href="https://mirmousavi.com/" target="_blank">Mostafa
+              Mirmousavi</Link>
+          </Typography>
       </Box>
   )
 }
