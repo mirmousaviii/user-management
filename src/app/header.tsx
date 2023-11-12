@@ -34,11 +34,6 @@ const pages = [
         title: "Home",
     },
     {
-        link: "/groups",
-        icon: <PeopleIcon/>,
-        title: "Groups",
-    },
-    {
         link: "/users",
         icon: <PersonIcon/>,
         title: "Users",
