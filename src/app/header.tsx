@@ -1,31 +1,67 @@
 "use client"
 
+import {useState} from "react";
+
 import {
     useMediaQuery,
     Box,
     AppBar,
     Toolbar,
-    Link,
     Button,
     Typography,
-    IconButton,
+    IconButton, MenuItem, Divider, List, ListItem, ListItemButton, ListItemText, Drawer, ListItemIcon,
 } from "@mui/material";
-
-import PeopleIcon from '@mui/icons-material/People';
+import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import HomeIcon from '@mui/icons-material/Home';
+import PeopleIcon from '@mui/icons-material/People';
+import PersonIcon from '@mui/icons-material/Person';
+
+
+const pages = [
+    {
+        link: "/",
+        icon: <HomeIcon />,
+        title: "Home",
+    },
+    {
+        link: "/groups",
+        icon: <PeopleIcon />,
+        title: "Groups",
+    },
+    {
+        link: "/users",
+        icon: <PersonIcon />,
+        title: "Users",
+    },
+];
 
 export default function Header() {
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen((prevState) => !prevState);
+    };
+
 
     const changeTheme = () => {
         alert("Coming soon...")
     }
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+        <>
+            <AppBar component="nav" position="static">
                 <Toolbar>
-                    <PeopleIcon sx={{ mr: 1 }} />
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
                     <Typography
                         variant="h6"
                         noWrap
@@ -41,14 +77,52 @@ export default function Header() {
                     >
                         User Management
                     </Typography>
-                    <Button color="inherit" component={Link} href="/">Home</Button>
-                    <Button color="inherit" component={Link} href="/groups">Groups</Button>
-                    <Button color="inherit" component={Link} href="/users">Users</Button>
-                    <IconButton sx={{ ml: 1 }} color="inherit" onClick={changeTheme}>
-                        {prefersDarkMode ? (<Brightness7Icon />) : (<Brightness4Icon />)}
-                    </IconButton>
+                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                        {pages.map((page) => (
+                            <Button key={page.link} sx={{ color: '#fff' }}>
+                                {page.title}
+                            </Button>
+                        ))}
+                    </Box>
+
+                     <IconButton sx={{ ml: 1 }} color="inherit" onClick={changeTheme}>
+                         {prefersDarkMode ? (<Brightness7Icon />) : (<Brightness4Icon />)}
+                     </IconButton>
                 </Toolbar>
             </AppBar>
-        </Box>
+            <nav>
+                <Drawer
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: true,
+                    }}
+                    sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+                    }}
+                >
+                    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+                        <Typography variant="h6" sx={{ my: 2 }}>
+                            Management
+                        </Typography>
+                        <Divider />
+                        <List>
+                            {pages.map((page) => (
+                                <ListItem key={page.link} disablePadding>
+                                    <ListItemButton component="a" href={page.link}>
+                                        <ListItemIcon>
+                                            {page.icon}
+                                        </ListItemIcon>
+                                        <ListItemText primary={page.title} />
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Box>
+                </Drawer>
+            </nav>
+        </>
     )
 }
