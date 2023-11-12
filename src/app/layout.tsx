@@ -6,10 +6,9 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import {
-    Box,
-    CssBaseline,
-    Link,
+import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
+
+import {Box,
 } from "@mui/material";
 
 import Header from "@/app/header";
@@ -28,7 +27,7 @@ export default function RootLayout({
     return (
     <html lang="en">
         <body>
-            <CssBaseline />
+        <ThemeRegistry>
             <Header />
 
             <Box sx={{p: 3}}>
@@ -36,6 +35,7 @@ export default function RootLayout({
             </Box>
 
             <Footer />
+        </ThemeRegistry>
         </body>
     </html>
   )
