@@ -31,16 +31,7 @@ export default function RootLayout({
             <CssBaseline />
             <Header />
 
-            <Box
-                sx={{
-                  display: 'flex',
-
-                  py: 5,
-                  px: 5,
-                  flexDirection: 'column',
-                  minHeight: '90vh',
-                }}
-            >
+            <Box sx={{p: 3}}>
               {children}
             </Box>
 

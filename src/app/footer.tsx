@@ -5,9 +5,9 @@ export default function Footer() {
       <Box
           component="footer"
           sx={{
-              py: 3,
-              px: 3,
-              mt: 'auto',
+              borderTop: "1px solid #000",
+              mt: "auto",
+              p: 3,
           }}
       >
           Copyright &copy; {new Date().getFullYear()} by <Link href="https://mirmousavi.com/" target="_blank">Mostafa
