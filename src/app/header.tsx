@@ -79,7 +79,7 @@ export default function Header() {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {pages.map((page) => (
-                            <Button key={page.link} sx={{ color: '#fff' }}>
+                            <Button key={page.link} color="inherit" component="a" href={page.link}>
                                 {page.title}
                             </Button>
                         ))}
