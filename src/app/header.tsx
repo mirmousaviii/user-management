@@ -1,55 +1,60 @@
 "use client"
 
-import {useState} from "react";
+import React from 'react';
 import Link from 'next/link'
-
 import {
-    useMediaQuery,
+    useTheme,
     Box,
     AppBar,
     Toolbar,
     Button,
     Typography,
-    IconButton, MenuItem, Divider, List, ListItem, ListItemButton, ListItemText, Drawer, ListItemIcon,
+    IconButton,
+    Drawer,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    ListItemIcon,
+    Divider,
 } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';
 import PersonIcon from '@mui/icons-material/Person';
+import ColorModeContext from "@/contex/color-mode";
 
 
 const pages = [
     {
         link: "/",
-        icon: <HomeIcon />,
+        icon: <HomeIcon/>,
         title: "Home",
     },
     {
         link: "/groups",
-        icon: <PeopleIcon />,
+        icon: <PeopleIcon/>,
         title: "Groups",
     },
     {
         link: "/users",
-        icon: <PersonIcon />,
+        icon: <PersonIcon/>,
         title: "Users",
     },
 ];
 
 export default function Header() {
-    const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const theme = useTheme();
+    const colorMode = React.useContext(ColorModeContext);
+    const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
 
-    const changeTheme = () => {
-        alert("Coming soon...")
-    }
     return (
         <>
             <AppBar component="nav" position="static">
@@ -59,9 +64,9 @@ export default function Header() {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
+                        sx={{mr: 2, display: {sm: 'none'}}}
                     >
-                        <MenuIcon />
+                        <MenuIcon/>
                     </IconButton>
                     <Typography
                         variant="h6"
@@ -78,7 +83,7 @@ export default function Header() {
                     >
                         User Management
                     </Typography>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Box sx={{display: {xs: 'none', sm: 'block'}}}>
                         {pages.map((page) => (
                             <Button key={page.link} color="inherit" component={Link} href={page.link}>
                                 {page.title}
@@ -86,9 +91,9 @@ export default function Header() {
                         ))}
                     </Box>
 
-                     <IconButton sx={{ ml: 1 }} color="inherit" onClick={changeTheme}>
-                         {prefersDarkMode ? (<Brightness7Icon />) : (<Brightness4Icon />)}
-                     </IconButton>
+                    <IconButton sx={{ml: 1}} onClick={colorMode.toggleColorMode}>
+                        {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+                    </IconButton>
                 </Toolbar>
             </AppBar>
             <nav>
@@ -100,15 +105,15 @@ export default function Header() {
                         keepMounted: true,
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+                        display: {xs: 'block', sm: 'none'},
+                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: 240},
                     }}
                 >
-                    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-                        <Typography variant="h6" sx={{ my: 2 }}>
+                    <Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
+                        <Typography variant="h6" sx={{my: 2}}>
                             Management
                         </Typography>
-                        <Divider />
+                        <Divider/>
                         <List>
                             {pages.map((page) => (
                                 <ListItem key={page.link} disablePadding>
@@ -116,7 +121,7 @@ export default function Header() {
                                         <ListItemIcon>
                                             {page.icon}
                                         </ListItemIcon>
-                                        <ListItemText primary={page.title} />
+                                        <ListItemText primary={page.title}/>
                                     </ListItemButton>
                                 </ListItem>
                             ))}
