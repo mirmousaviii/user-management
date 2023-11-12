@@ -1,9 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-import Image from "next/image";
 
-const inter = Inter({ subsets: ['latin'] })
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+import {
+    Box,
+    CssBaseline,
+    Link,
+} from "@mui/material";
+
+import Header from "@/app/header";
+import Footer from "@/app/footer";
 
 export const metadata: Metadata = {
   title: 'User Management',
@@ -15,40 +25,26 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
+    return (
     <html lang="en">
-        <body className={inter.className}>
-        <main>
-          <div>
-            <div>
-              <a href="/">
-                <Image
-                    src="/vercel.svg"
-                    alt="User Management"
-                    className="dark:invert"
-                    width={100}
-                    height={24}
-                    priority
-                />
-              </a>
-            </div>
+        <body>
+            <CssBaseline />
+            <Header />
 
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/users">User list</a></li>
-            </ul>
+            <Box
+                sx={{
+                  display: 'flex',
 
-          </div>
+                  py: 5,
+                  px: 5,
+                  flexDirection: 'column',
+                  minHeight: '90vh',
+                }}
+            >
+              {children}
+            </Box>
 
-          {children}
-
-          <div>
-            <div>
-              &copy; {new Date().getFullYear()} by <a href="https://mirmousavi.com/" target="_blank">Mostafa
-              Mirmousavi</a>
-            </div>
-          </div>
-        </main>
+            <Footer />
         </body>
     </html>
   )
