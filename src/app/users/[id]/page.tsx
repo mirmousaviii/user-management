@@ -1,11 +1,19 @@
-import {Avatar, Breadcrumbs, Card, CardContent, CardHeader, Link as MUILink, Typography} from "@mui/material";
-import Users from "../users.json";
 import Link from "next/link";
+import {
+    Avatar,
+    Breadcrumbs,
+    Card,
+    CardContent,
+    CardHeader,
+    Link as MUILink,
+    Typography
+} from "@mui/material";
+import Users from "../users.json";
 
 
-export default function UserDetails({ params }: { params: { id: string } }) {
+export default function UserDetails({params}: { params: { id: string } }) {
     // TODO: Handle 404
-    const user = Users.find(({id})=> (id.toString() === params.id));
+    const user = Users.find(({id}) => (id.toString() === params.id));
 
     return (
         <>
@@ -27,14 +35,14 @@ export default function UserDetails({ params }: { params: { id: string } }) {
                     Users
                 </MUILink>
                 <Typography color="text.primary">
-                    {user?.id}
+                    {user?.firstName}
                 </Typography>
             </Breadcrumbs>
             <Card>
                 <CardHeader
                     avatar={
                         <Avatar aria-label="recipe">
-                            {user?.firstName.substring(0,1)}
+                            {user?.firstName.substring(0, 1)}
                         </Avatar>
                     }
                     title={`${user?.firstName} ${user?.lastName}`}
