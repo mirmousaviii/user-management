@@ -8,6 +8,7 @@ import {ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import {ColorModeProvider} from "@/contex/color-mode";
 import {darkTheme, lightTheme} from "@/components/ThemeRegistry/theme";
+import {ScopedCssBaseline} from "@mui/material";
 
 export default function ThemeRegistry(props: any) {
     const {options, children} = props;
@@ -56,8 +57,10 @@ export default function ThemeRegistry(props: any) {
         <CacheProvider value={cache}>
             <ColorModeProvider render={(mode) => (
                 <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
-                    <CssBaseline enableColorScheme/>
-                    {children}
+                    <CssBaseline />
+                    <ScopedCssBaseline enableColorScheme>
+                        {children}
+                    </ScopedCssBaseline>
                 </ThemeProvider>
             )}>
             </ColorModeProvider>

@@ -1,13 +1,8 @@
 import type {Metadata} from 'next'
-import './globals.css'
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
-import {Box,} from "@mui/material";
 import Header from "@/app/header";
 import Footer from "@/app/footer";
+import {Box} from "@mui/material";
 
 export const metadata: Metadata = {
     title: 'User Management',
@@ -19,13 +14,19 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <html lang="en">
         <body>
         <ThemeRegistry options={{key: 'mui'}}>
-            <Header/>
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+            }}>
+                <Header/>
 
-            <Box sx={{p: 3}}>
-                {children}
+                <Box sx={{p: 3}}>
+                    {children}
+                </Box>
+
+                <Footer/>
             </Box>
-
-            <Footer/>
         </ThemeRegistry>
         </body>
         </html>
