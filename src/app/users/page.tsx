@@ -36,8 +36,8 @@ const columns: GridColDef[] = [
             <Button key={params.row.id}
                     href={`/users/${params.row.id}`}
                     component={Link}
-                    variant="contained"
-                    startIcon={<AccountBoxIcon />}
+                    variant="outlined"
+                    startIcon={<AccountBoxIcon/>}
             >
                 Details
             </Button>

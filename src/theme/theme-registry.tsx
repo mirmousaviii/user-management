@@ -7,7 +7,7 @@ import {CacheProvider} from '@emotion/react';
 import {ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import {ColorModeProvider} from "@/contex/color-mode";
-import {darkTheme, lightTheme} from "@/components/ThemeRegistry/theme";
+import {darkTheme, lightTheme} from "@/theme/theme";
 import {ScopedCssBaseline} from "@mui/material";
 
 export default function ThemeRegistry({children, options}: { children: React.ReactNode, options:  Options }) {

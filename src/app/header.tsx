@@ -22,10 +22,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import HomeIcon from '@mui/icons-material/Home';
-import PeopleIcon from '@mui/icons-material/People';
 import PersonIcon from '@mui/icons-material/Person';
 import ColorModeContext from "@/contex/color-mode";
-
 
 const pages = [
     {
@@ -43,12 +41,11 @@ const pages = [
 export default function Header() {
     const theme = useTheme();
     const colorMode = React.useContext(ColorModeContext);
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
+        setIsDrawerOpen((prevState) => !prevState);
     };
-
 
     return (
         <>
@@ -94,7 +91,7 @@ export default function Header() {
             <nav>
                 <Drawer
                     variant="temporary"
-                    open={mobileOpen}
+                    open={isDrawerOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
                         keepMounted: true,
@@ -105,6 +102,7 @@ export default function Header() {
                     }}
                 >
                     <Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
+
                         <Typography variant="h6" sx={{my: 2}}>
                             Management
                         </Typography>

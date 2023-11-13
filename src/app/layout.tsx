@@ -1,5 +1,5 @@
 import type {Metadata} from 'next'
-import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
+import ThemeRegistry from '@/theme/theme-registry';
 import Header from "@/app/header";
 import Footer from "@/app/footer";
 import {Box} from "@mui/material";
