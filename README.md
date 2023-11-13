@@ -50,7 +50,9 @@ The following is a sample json generator:
   - [x] Display detailed information of a selected user (Full Name, Email, Age, Address, and Profile Picture)
   - [x] Provide a back button (_Added Breadcrumbs instead of a back button_)
 - [x] Home page (fetche data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/))
-  - [ ] Add and Delete 
+  - [x] List posts
+  - [x] Add new post 
+  - [x] Delete post 
 - [x] TypeScript
 - [x] React Feature (useState, useEffect, useMemo)
 - [x] State Management (theme switcher)

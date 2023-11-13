@@ -65,7 +65,7 @@ export default function HomePage() {
 
     return (
         <>
-            <Typography variant="h4">New Post</Typography>
+            <Typography variant="h5">New Post</Typography>
             <Box component="form"
                  sx={{
                      '& > :not(style)': {mb: 1},
@@ -95,7 +95,7 @@ export default function HomePage() {
                 >Add new post</Button>
             </Box>
 
-            <Typography variant="h4">Posts</Typography>
+            <Typography variant="h5">Posts</Typography>
             {posts.map((item) => (
                 <Chip variant="outlined"
                       color="primary"
