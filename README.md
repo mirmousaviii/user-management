@@ -7,7 +7,10 @@ A simple user management
 
 0. You can change `baseUrl` from [next.config.js](next.config.js)
 1. Run `npm install` to install all dependencies.
-2. Run `npm run dev` to start the server in the development mode. Or run `npm run build` to generate build files.
+2. How to start the project:
+   * Run `npm run dev` to start the server in the development mode. 
+   * Run `npm run build` to generate build files, and `npm run start` to start server in production mode. (Use production mode to check dynamic import.)
+   
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 4. In the **development mode** , the page will reload if you make edits.
 
@@ -57,7 +60,7 @@ The following is a sample json generator:
 - [x] React Feature (useState, useEffect, useMemo)
 - [x] State Management (theme switcher)
 - [ ] Performance
-  - [ ] React.lazy()
+  - [x] next/dynamic (next/dynamic is a composite of React.lazy() and Suspense)
   - [x] Lighthouse
   - [ ] Optimize code
 - [ ] Documentation
