@@ -11,5 +11,6 @@ export interface User {
     email: string;
     age: number;
     address: string;
+    avatarUrl?: string;
 }
 

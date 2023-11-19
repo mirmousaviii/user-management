@@ -5,7 +5,8 @@
     "firstName": "Allison",
     "lastName": "Nguyen",
     "age": 34,
-    "address": "63 Hanson Place, Alfarata, Illinois"
+    "address": "63 Hanson Place, Alfarata, Illinois",
+    "avatarUrl": "/avatars/fdsar.jpg"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "firstName": "Leslie",
     "lastName": "Taylor",
     "age": 32,
-    "address": "94 Flatlands Avenue, Statenville, North Dakota"
+    "address": "94 Flatlands Avenue, Statenville, North Dakota",
+    "avatarUrl": "/avatars/fdscx.jpg"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "firstName": "Enid",
     "lastName": "Rivera",
     "age": 65,
-    "address": "33 Emerald Street, Naomi, District Of Columbia"
+    "address": "33 Emerald Street, Naomi, District Of Columbia",
+    "avatarUrl": "/avatars/fdtes.jpg"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "firstName": "Brianna",
     "lastName": "Forbes",
     "age": 50,
-    "address": "48 Fay Court, Edmund, Georgia"
+    "address": "48 Fay Court, Edmund, Georgia",
+    "avatarUrl": "/avatars/gfssa.jpg"
   },
   {
     "id": 5,
@@ -133,7 +137,8 @@
     "firstName": "Barron",
     "lastName": "Rollins",
     "age": 41,
-    "address": "6 Nautilus Avenue, Longbranch, Arizona"
+    "address": "6 Nautilus Avenue, Longbranch, Arizona",
+    "avatarUrl": "/avatars/ggfds.jpg"
   },
   {
     "id": 18,
@@ -149,6 +154,22 @@
     "firstName": "Marcella",
     "lastName": "Waters",
     "age": 54,
+    "address": "38 Dorchester Road, Catharine, Connecticut"
+  },
+  {
+    "id": 20,
+    "email": "bernard1111@roughies.guitars",
+    "firstName": "Robert",
+    "lastName": "Watery",
+    "age": 59,
+    "address": "41 Forbell Street, Leland, Idaho"
+  },
+  {
+    "id": 21,
+    "email": "waters2222@flexigen.vacations",
+    "firstName": "Marcella",
+    "lastName": "Bernard",
+    "age": 34,
     "address": "38 Dorchester Road, Catharine, Connecticut"
   }
 ]

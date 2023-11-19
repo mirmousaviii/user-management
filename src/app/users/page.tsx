@@ -3,13 +3,33 @@
 import * as React from 'react';
 import Link from "next/link";
 import {Box, Paper, Button} from '@mui/material';
-import {DataGrid, GridColDef} from '@mui/x-data-grid';
+import {DataGrid, GridColDef, GridRenderCellParams, GridRowParams} from '@mui/x-data-grid';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import Users from "./users.json";
+import Users from "@/sample-data/users.json";
+import Image from "next/image";
+import {User} from "@/types";
 
 
 const rowsPerPage = 10;
 const columns: GridColDef[] = [
+    {
+        field: 'avatarUrl',
+        headerName: 'Avatar',
+        width: 70,
+        sortable: false,
+        filterable: false,
+        hideable: false,
+        renderCell: (params: GridRenderCellParams<User>) => (
+            <Image src={params.row.avatarUrl || "/default-avatar.jpg"}
+                   alt={params.row.firstName}
+                   width={40}
+                   height={40}
+                   quality={40}
+                   blurDataURL="/blur-avatar.jpg"
+                   placeholder="blur"
+            />
+        ),
+    },
     {
         field: 'firstName',
         headerName: 'Name',
@@ -32,7 +52,7 @@ const columns: GridColDef[] = [
         headerName: 'Action',
         width: 200,
         type: 'actions',
-        getActions: (params) => [
+        getActions: (params: GridRowParams<User>) => [
             <Button key={params.row.id}
                     href={`/users/${params.row.id}`}
                     component={Link}
