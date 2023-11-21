@@ -60,13 +60,6 @@ The following is the config for the json generator:
 ```
 
 
-## Screenshots
-
-The app's screenshots can be found [public/avatars](public/avatars).
-
-![User management](screenshots/11.png)
-
-
 ## Features and Examples
 
 - MUI and Theme config [src/theme/theme.ts](src/app/users/[id]/page.tsx)
@@ -76,6 +69,13 @@ The app's screenshots can be found [public/avatars](public/avatars).
 - Routes and Dynamic routes [src/app/users/[id]/page.tsx](src/app/users/[id]/page.tsx)
 - Lighthouse report [lighthouse](lighthouse)
 - UI Responsibility
+
+
+## Screenshots
+
+The app's screenshots can be found [public/avatars](public/avatars).
+
+![User management](screenshots/11.png)
 
 
 ## TODO
