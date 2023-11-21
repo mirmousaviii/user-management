@@ -23,7 +23,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
-import ColorModeContext from "@/contex/color-mode";
+import ColorModeContext from "@/context/color-mode";
 
 const pages = [
     {
