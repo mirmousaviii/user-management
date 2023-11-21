@@ -75,7 +75,7 @@ The following is the config for the json generator:
 
 The app's screenshots can be found [public/avatars](public/avatars).
 
-![User management](screenshots/11.png)
+![User management](screenshots/10-user-list.png)
 
 
 ## TODO
